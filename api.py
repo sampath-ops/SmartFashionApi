@@ -48,7 +48,7 @@ if ENV_TABLE_ARGS:
 app.config['SERVERS'] = [
     {
         'description': 'Code Engine deployment',
-        'url': 'https://{appname}.{projectid}.{region}.codeengine.appdomain.cloud',
+        'url': 'https://smart-fashion-recommender06745.herokuapp.com',
         'variables':
         {
             "appname":
