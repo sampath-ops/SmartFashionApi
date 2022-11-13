@@ -266,4 +266,4 @@ def print_default():
 # Get the PORT from environment or use the default
 port = os.getenv('PORT', '5000')
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=int(port))
+    app.run(threaded=True,port=int(port))
