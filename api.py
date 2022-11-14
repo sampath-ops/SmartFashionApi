@@ -177,7 +177,7 @@ def get_event_name(short_name):
     """Event record by name
     Retrieve a single event record by its short name
     """
-    print("hello")
+    
     search="%{}%".format(short_name)
     return EventModel.query.filter(EventModel.shortname.like(search)).first()
 
