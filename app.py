@@ -25,7 +25,7 @@ app.secret_key = 'smartfashionrecommender'
 app.config['SERVERS'] = [
     {
         'description': 'Heroku deployment',
-        'url': 'https://smart-fashion-recommender06745.herokuapp.com',
+        'url': 'https://smartfashion06745.herokuapp.com',
         'variables':
         {
             "appname":
