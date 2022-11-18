@@ -83,9 +83,20 @@ def home():
 def shop():
     return render_template('shop.html')
 
-@app.route('/shop-details')
+@app.route('/shop-details',methods=['GET'])
 def shopDetails():
-    return render_template('shop_detail.html')
+    print()
+    args = request.args
+    type(args.to_dict())
+    print(args.get("id"))
+    sql = 'SELECT PRODUCTS.NAME, PRODUCTS.PRICE, PRODUCTS.DESC, PROD_IMGS.IMAGE FROM PRODUCTS INNER JOIN PROD_IMGS ON PRODUCTS.ID = PROD_IMGS.PROD_ID WHERE PRODUCTS.ID = ?'
+    stmt = ibm_db.prepare(conn,sql)
+    ibm_db.bind_param(stmt,1,args.get("id"))
+    ibm_db.execute(stmt)
+    product_detail = ibm_db.fetch_assoc(stmt)
+    image=base64.b64encode(product_detail["IMAGE"]).decode("utf-8")
+    product_detail.update({"IMAGE":image})
+    return render_template('shop_detail.html',detail = product_detail)
 
 @app.route('/checkout')
 def checkout():

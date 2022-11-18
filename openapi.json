@@ -167,6 +167,22 @@
         "summary": "Contact"
       }
     },
+    "/profile": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Profile"
+      }
+    },
     "/checkout": {
       "get": {
         "parameters": [],
@@ -190,9 +206,7 @@
           "200": {
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOut"
-                }
+                "schema": {}
               }
             },
             "description": "Successful response"
@@ -218,20 +232,5 @@
       }
     }
   },
-  "openapi": "3.0.3",
-  "components": {
-    "schemas": {
-      "UserOut": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  }
+  "openapi": "3.0.3"
 }
