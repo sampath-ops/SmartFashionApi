@@ -190,7 +190,9 @@
           "200": {
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
               }
             },
             "description": "Successful response"
@@ -216,5 +218,20 @@
       }
     }
   },
-  "openapi": "3.0.3"
+  "openapi": "3.0.3",
+  "components": {
+    "schemas": {
+      "UserOut": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }
